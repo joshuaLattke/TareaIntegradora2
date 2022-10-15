@@ -5,6 +5,14 @@ private  String  name;
 private  int initialScore;
 private  int numberofLives;
 
+
+public Player(String nickName, String name, int initialScore, int numberofLives) {
+    this.nickName = nickName;
+    this.name = name;
+    this.initialScore = initialScore;
+    this.numberofLives = numberofLives;
+}
+
 public String getNickName() {
     return nickName;
 }
@@ -31,5 +39,8 @@ public int getNumberofLives() {
 public void setNumberofLives(int numberofLives) {
     this.numberofLives = numberofLives;
 }
-public Player
-}
+@Override
+ public String toString(){
+    return "nickname"+nickName+"name"+name+"initialScore"+initialScore+"numberofLives"+numberofLives ;
+ }
+} 
