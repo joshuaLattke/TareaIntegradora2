@@ -2,14 +2,24 @@ package model;
 public class Level{
     private  int Number;
     private  TypeComplexity complexity;
-    private Enemy[] level;
-    private Treasure[]level1;
+    private Enemy[] enemies;
+    private Treasure[]treasures;
    
-     public Level(int number, TypeComplexity complexity) {
+
+    public Level(int number, TypeComplexity complexity) {
         Number = number;
         this.complexity = complexity;
-        this.level=new Enemy[5];
-        this.level1= new Treasure[10];
+        this.enemies=new Enemy[5];
+        this.treasures= new Treasure[10];
+    }
+
+    public void setEnemies(Enemy[] enemies) {
+        this.enemies = enemies;
+    }
+
+
+    public void setTreasures(Treasure[] treasures) {
+        this.treasures = treasures;
     }
 
 
@@ -31,30 +41,32 @@ public class Level{
     public void setComplexity(TypeComplexity complexity) {
         this.complexity = complexity;
     }
-    public Enemy[] getLevel() {
-        return level;
+    public Enemy[] getEnemies() {
+        return enemies;
     }
 
 
-    public void setLevel(Enemy enemy) {
+    public void setEnemy(Enemy enemy) {
         boolean out=false;
-        for(int i=0;i<level.length && !out;i++){
-            if(level[i]==null){
-                level[i]=enemy;
+        for(int i=0;i<enemies.length && !out;i++){
+            if(enemies[i] == null){
+                enemies[i]=enemy;
                 out=true;
             }
         }
     }
-    public Treasure[] getLevel1() {
-        return level1;
+
+
+    public Treasure[] getTreasures() {
+        return treasures;
     }
 
 
-    public void setLevel1(Treasure treasures) {
+    public void setTreasure(Treasure treasure) {
         boolean out=false;
-        for(int i=0;i<level1.length && !out;i++){
-            if(level1[i]==null){
-                level[i]=treasures;
+        for(int i=0;i<treasures.length && !out;i++){
+            if(treasures[i]==null){
+                treasures[i]=treasure;
                 out=true;
             }
         }

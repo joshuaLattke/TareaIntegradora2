@@ -28,7 +28,7 @@ public class VideoGameManager{
                 registerLevelTreasure1();
                 break;
                 case 4:
-                modifiScore();
+                modifyScore();
                 default:
                 System.out.println("Digite correctamente la opcion 1, 2 y 3");
                 break;
@@ -53,24 +53,33 @@ public class VideoGameManager{
             System.out.println("registre  el enemigo");
             System.out.println("registre el nombre del enemigo ");
             String nameId=sc.nextLine(); 
-            System.out.println("registre el tipo de enemigo");
+            System.out.println("registre el tipo de enemigo ");
+
+            ///// hacer switch case
+
             Enemy  typeEnemy; 
+            switch(Enemy)
+
+            System.out.println("registre la posicion de x");
             double x; 
+            System.out.println();
             double y; 
-                    if(VideoGameController.registerLeverEnemy(nameId, typeEnemy,x,y)){
+            System.out.println("registre el nivel que le quiera asignar al enemigo ");
+            int level=sc.nextInt();
+                    if(videoGameController.registerLeverEnemy(level,nameId, typeEnemy,x,y)){
                     System.out.println("enemigo registrado correctamente");
                     }else{
                     System.out.println("Digite correctamente las opciones");
                     }
                 }   
-            }
+            
             private static void  registerLevelTreasure1(){
                 System.out.println("Digite el tesoro");
                     System.out.println("Digite el nombre");
                     String name=sc.nextLine();
                     System.out.println("");
                     
-                    if(VideoGameController.registerLevelTreasure(name,urlImagen,x,y)){
+                    if(VideoGameController.registerLevelTreasure(name,urlImagen,x,y,level)){
                         System.out.println("tesoro registrado correctamente");
                     }else{
                         System.out.println("Digite correctamente las opciones");
