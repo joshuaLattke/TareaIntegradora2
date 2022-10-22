@@ -1,27 +1,29 @@
 package model; 
 public class Enemy{
     private String nameId;
-    private Enemy TypeEnemy;
+    private  TypeEnemy enemiess;
     private double  x;
     private double y;
-    
-    public Enemy(String nameId, Enemy typeEnemy, double x, double y) {
+   
+    public Enemy(String nameId, TypeEnemy enemiess, double x, double y) {
         this.nameId = nameId;
-        TypeEnemy = typeEnemy;
+        this.enemiess = enemiess;
         this.x = x;
         this.y = y;
     }
+    
     public String getNameId() {
         return nameId;
     }
     public void setNameId(String nameId) {
         this.nameId = nameId;
+    
     }
-    public Enemy getTypeEnemy() {
-        return TypeEnemy;
+    public TypeEnemy getEnemiess() {
+        return enemiess;
     }
-    public void setTypeEnemy(Enemy typeEnemy) {
-        TypeEnemy = typeEnemy;
+    public void setEnemiess(TypeEnemy enemiess) {
+        this.enemiess = enemiess;
     }
     public double getX() {
         return x;
@@ -37,6 +39,6 @@ public class Enemy{
     }
     @Override
     public String toString(){
-        return "nameID"+nameId+"typeEnemy"+TypeEnemy+"x"+x+"y"+y;
+        return "nameID"+nameId+"typeEnemy"+enemiess+"x"+x+"y"+y;
     }
-}
+} 

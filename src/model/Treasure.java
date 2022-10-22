@@ -4,14 +4,13 @@ public class Treasure{
     private String  urlImagen;
     private double x;
     private double  y;
-    private Treasure TypeTreasure;
     
-    public Treasure(String name, String urlImagen, double x, double y,Treasure typeTreasure) {
+    public Treasure(String name, String urlImagen, double x, double y) {
         this.name = name;
         this.urlImagen = urlImagen;
         this.x = x;
         this.y = y;
-        TypeTreasure = typeTreasure;
+        
     }
     public String getName() {
         return name;
@@ -37,14 +36,10 @@ public class Treasure{
     public void setY(double y) {
         this.y = y;
     }
-    public Treasure getTypeTreasure() {
-        return TypeTreasure;
-    }
-    public void setTypeTreasure(Treasure typeTreasure) {
-        TypeTreasure = typeTreasure;
-    }
+   
+    
     @Override
     public String toString(){
-        return "name"+name+"urlImagen"+urlImagen+"x"+x+"y"+y+"TypeTreausre"+TypeTreasure;
+        return "name"+name+"urlImagen"+urlImagen+"x"+x+"y"+y;
     }
 }

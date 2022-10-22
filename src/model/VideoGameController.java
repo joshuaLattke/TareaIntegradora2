@@ -3,6 +3,7 @@ package model;
 public class VideoGameController{
     private Player[]players;
 	private Level[]levels;
+	 
 	
 	
 	public VideoGameController(){
@@ -30,11 +31,21 @@ public class VideoGameController{
 		}
 		return true;
 	}
+	public  boolean registerLevele(int number ){
+		Level newlevel  = new Level(number );
+		for (int i= 0; i<levels.length; i++){
+			if(levels[i]==null){
+				levels[i]=newlevel;
+				return true;
+			}
+		}
+
+		return false;
+	}
 
 
-	public boolean registerLeverEnemy(int level, String nameId, Enemy typeEnemy, double x, double y ){
-		Enemy newEnemyLevel =new Enemy( nameId,  typeEnemy,  x, y);
-
+	public boolean registerLeverEnemy(int level, String nameId, double x, double y,TypeEnemy enemiess ){
+		Enemy newEnemyLevel =new Enemy( nameId,   enemiess,  x, y);
 		if(isTheLevelCreated(level)){ 
 			levels[level].setEnemy(newEnemyLevel);
 			return true;
@@ -44,8 +55,8 @@ public class VideoGameController{
 	}
 
 
-	public boolean registerLevelTreasure(int level, String name, String urlImagen, double x, double y,Treasure typeTreasure){
-	Treasure newTreasure =new Treasure ( name,  urlImagen,  x,  y, typeTreasure);
+	public boolean registerLevelTreasure(int level, String name, String urlImagen, double x, double y){
+	Treasure newTreasure =new Treasure (level, name,  urlImagen,  x,  y);
 		if(isTheLevelCreated(level)){
 			levels[level].setTreasure(newTreasure);
 			return true;
@@ -54,5 +65,17 @@ public class VideoGameController{
 		return false;
 }
 
+	public boolean modifyScore(int initialScore){
+		if(players[p.setinitialScore]==null){
+			return true;
+		}
+		return false;
+	}
 
+	public boolean registerLevel(int number, TypeComplexity complexity) {
+		return false;
+	}	
+	public  calculteComplexity(){
+		for()
+	}
 }

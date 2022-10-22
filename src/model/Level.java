@@ -4,13 +4,13 @@ public class Level{
     private  TypeComplexity complexity;
     private Enemy[] enemies;
     private Treasure[]treasures;
-   
+ 
 
     public Level(int number, TypeComplexity complexity) {
         Number = number;
         this.complexity = complexity;
-        this.enemies=new Enemy[5];
-        this.treasures= new Treasure[10];
+        this.enemies=new Enemy[25];
+        this.treasures= new Treasure[50];
     }
 
     public void setEnemies(Enemy[] enemies) {
@@ -75,6 +75,6 @@ public class Level{
 
     @Override
     public String toString(){
-        return "number"+Number+"complexity"+complexity;
+        return "number"+Number+"complexity"+complexity+"enemy"+enemies+"treasure"+treasures;
     }
 }
