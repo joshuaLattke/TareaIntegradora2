@@ -15,7 +15,7 @@ public class VideoGameController{
 		Player newPlayer = new Player( nickName,  name,  initialScore, numberofLives);
 
 		for (int i = 0; i < players.length; i++) {
-			if (players[i] == null) {
+			if (players[i]	 == null) {
 				players[i] = newPlayer;
 				return true;
 			}
@@ -25,13 +25,14 @@ public class VideoGameController{
 	}
 
 	public boolean isTheLevelCreated(int position ){
-		
 		if (levels[position-1] == null) {
-			return false;
+			return true;
 		}
-		return true;
+		return false;
 	}
-	public  boolean registerLevele(int number ){
+
+
+	public  boolean registerLevel(int number ){
 		Level newlevel  = new Level(number );
 		for (int i= 0; i<levels.length; i++){
 			if(levels[i]==null){
@@ -47,10 +48,9 @@ public class VideoGameController{
 	public boolean registerLeverEnemy(int level, String nameId, double x, double y,TypeEnemy enemiess ){
 		Enemy newEnemyLevel =new Enemy( nameId,   enemiess,  x, y);
 		if(isTheLevelCreated(level)){ 
-			levels[level].setEnemy(newEnemyLevel);
+			levels[level-1].setEnemy(newEnemyLevel);
 			return true;
 		}
-
 		return false;	
 	}
 
@@ -65,13 +65,17 @@ public class VideoGameController{
 		return false;
 }
 
-	public boolean modifyScore(int initialScore){
+	public void modifyScore(int initialScore){
+
+
+		/** 
 		if(players[p.setinitialScore]==null){
 			return true;
 		}
 		return false;
+		*/
 	}
 
-	public void  int  calculteComplexity(){
+	public void  calculteComplexity(){
 	}
 }
