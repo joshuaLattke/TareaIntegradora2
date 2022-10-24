@@ -1,14 +1,13 @@
 package model;
 public class Level{
     private  int Number;
-    private  TypeComplexity complexity;
     private Enemy[] enemies;
     private Treasure[]treasures;
  
 
-    public Level(int number, TypeComplexity complexity) {
+    public Level(int number) {
         Number = number;
-        this.complexity = complexity;
+        
         this.enemies=new Enemy[25];
         this.treasures= new Treasure[50];
     }
@@ -33,14 +32,7 @@ public class Level{
     }
 
 
-    public TypeComplexity getComplexity() {
-        return complexity;
-    }
-
-
-    public void setComplexity(TypeComplexity complexity) {
-        this.complexity = complexity;
-    }
+   
     public Enemy[] getEnemies() {
         return enemies;
     }
@@ -75,6 +67,6 @@ public class Level{
 
     @Override
     public String toString(){
-        return "number"+Number+"complexity"+complexity+"enemy"+enemies+"treasure"+treasures;
+        return "number"+Number+"enemy"+enemies+"treasure"+treasures;
     }
 }

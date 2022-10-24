@@ -18,7 +18,7 @@ public class VideoGameManager{
             int opcinion=sc.nextInt();
             switch(opcinion){
             case 1:
-            registerPlayer1();
+            createdPlayer();
                 break;
             case 2: 
                 registerLeverEnemy1();
@@ -28,20 +28,23 @@ public class VideoGameManager{
                 break;
                 case 4:
                 modifyScore();
+                break;
+                case 5:
+                
                 default:
                 System.out.println("Digite correctamente la opcion 1, 2 y 3");
                 break;
                 }
             }
         }
-        private static void registerPlayer1(){
+        private static void createdPlayer(){
             System.out.println("ingrese el nickname");
             String nickName=sc.nextLine();
             System.out.println("ingrese el nombre");
             String name=sc.nextLine();
             int initialScore=10;
             int NumberofLives=5;
-            if(videoGameController.registerPlayer( nickName,  name, initialScore,NumberofLives){
+            if(videoGameController.registerPlayer( nickName,  name, initialScore,NumberofLives)){
             System.out.println("jugador registrado correctamente");
             }else{
                 System.out.println("jugador no registrado correctamente");
@@ -49,17 +52,18 @@ public class VideoGameManager{
             }
         }
         public static void Random(){
+             Random random= new Random();
             int max=2560;
             int min=1440;
-            int rage=(max-min)+1;
+            int rage=(max-min)+1;   
             int numRandom=(int)(Math.Random)(max-min);
         }
-        private static void registerLevel(){
+        private static void createdLevel(){
             
             for (int=0;i<9;i++);
           System.out.println("ingrese en el nivel que esta ");
           int number=sc.nextInt();
-           if(videoGameController.registerLevel(number, complexity))  {
+           if(videoGameController.registerLevel(number))  {
             System.out.println(" level registrado correctamente");
           }else{
             System.out.println("level mal registrado ");
@@ -115,12 +119,12 @@ public class VideoGameManager{
                     System.out.println("ingese imagen");
                     String urlImagen=sc.nextLine();
                     System.out.println("ingrese la posicion de x");
-                    int x=sc.nextInt();
+                    double x=sc.nextInt();
                     System.out.println("ingrese la posicion de y");
-                    int y=sc.nextInt();
+                    double  y=sc.nextInt();
                     System.out.println("register el nivel para asignar al tesosro");
-                    int level=sc.nextInt();
-                    if(VideoGameController.registerLevelTreasure(level,name,urlImagen,x,y)){
+                    int  level=sc.nextInt();
+                    if(VideoGameController.registerLevelTreasure(level.name,urlImagen,x,y)){
                         System.out.println("tesoro registrado correctamente");
                     }else{
                         System.out.println("Digite correctamente las opciones");

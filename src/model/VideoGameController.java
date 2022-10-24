@@ -56,7 +56,7 @@ public class VideoGameController{
 
 
 	public boolean registerLevelTreasure(int level, String name, String urlImagen, double x, double y){
-	Treasure newTreasure =new Treasure (level, name,  urlImagen,  x,  y);
+	Treasure newTreasure =new Treasure ( name,  urlImagen,  x,  y);
 		if(isTheLevelCreated(level)){
 			levels[level].setTreasure(newTreasure);
 			return true;
@@ -72,10 +72,6 @@ public class VideoGameController{
 		return false;
 	}
 
-	public boolean registerLevel(int number, TypeComplexity complexity) {
-		return false;
-	}	
-	public  calculteComplexity(){
-		for()
+	public void  int  calculteComplexity(){
 	}
 }
