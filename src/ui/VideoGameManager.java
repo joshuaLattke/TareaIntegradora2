@@ -15,6 +15,9 @@ public class VideoGameManager {
         createdLevel();
 	}
 
+	/**
+	 * 
+	 */
 	public static void menu() {
 		System.out.println("Bienvenidos al juego");
 		while (!exit) {
@@ -32,17 +35,22 @@ public class VideoGameManager {
 			case 3:
 				registerLevelTreasure1();
 				break;
-
 			case 4:
 				modifyScore();
 				break;
+			case 5:
+				enemyConsonants();
+				break;
 			default:
-				System.out.println("Digite correctamente la opcion 1, 2 y 3");
+				System.out.println("Digite correctamente la opcion 1, 2, 3,  4 y 5");
 				break;
 			}
 		}
 	}
 
+	/**
+	 * 
+	 */
 	private static void createdPlayer() {
 		System.out.println("ingrese el nickname");
 
@@ -66,6 +74,9 @@ public class VideoGameManager {
 		}
 	}
 
+	/**
+	 * 
+	 */
 	private static void createdLevel() {
 
 		for (int i = 0; i < 9; i++);
@@ -77,6 +88,9 @@ public class VideoGameManager {
 
 	}
 
+	/**
+	 * 
+	 */
 	private static void registerLeverEnemy1() {
 		System.out.println("registre  el enemigo");
 
@@ -124,7 +138,7 @@ public class VideoGameManager {
 
 		double y = sc.nextDouble();
 
-		System.out.println("registre el nivel que le quiera asignar al enemigo ");
+		System.out.println("el nivel que se encontro el enemigo ");
 		
         int level = sc.nextInt();
 
@@ -135,6 +149,9 @@ public class VideoGameManager {
 		}
 	}
 
+	/**
+	 * 
+	 */
 	private static void registerLevelTreasure1() {
 	    System.out.println("Digite el tesosro ");
 		
@@ -150,7 +167,7 @@ public class VideoGameManager {
         System.out.println("ingrese la posicion de y");
 		double y = sc.nextInt();
 		
-        System.out.println("register el nivel para asignar al tesosro");
+        System.out.println("register el nivel en el que se encontro el tesoro");
 		int level = sc.nextInt();
 		if (videoGameController.registerLevelTreasure(level, name, urlImagen, x, y)) {
 			System.out.println("tesoro registrado correctamente");
@@ -160,8 +177,32 @@ public class VideoGameManager {
 
 	}
 
+	/**
+	 * 
+	 */
 	private static void modifyScore() {
+		System.out.println("Digite su nombre");
+		
+		String name=sc.nextLine();
+
 		System.out.println("Digite el valor que va modificar");
+
+		int value=sc.nextInt();
+
+
+		///// controladora
+		//// BUSCAR EL USUARIO DADO UN NOMBRE
+		/// CON EL USUARIO ENCONTRADO, AHI SI USAR EL GETSCORE PARA DESPUES MODIFICARLO USANDO EL SETSCORE 
+		
+
+		if(value<=10){
+			
+			System.out.println("tiene que ser un valor mayor a 10");
+		
+		}else{
+			videoGameController.modifyScore(name, value);
+			System.out.println("se ha modificado correctamenta el puntaje ");
+		}
 
 		/**
 		 * 
@@ -169,5 +210,15 @@ public class VideoGameManager {
 		 * correctamente"); }else{ System.out.println("no se puede hacer esta"); }
 		 * 
 		 */
+	}
+	private static void enemyConsonants(){
+		
+		char[] consonantes = {'b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z'};
+		
+		String typeEnemy="OGROS, ABSTRACTS, BOSSES, MAGIC"; 
+
+		System.out.println("las consonates de los enemigos son"+typeEnemy);
+		
+
 	}
 }
